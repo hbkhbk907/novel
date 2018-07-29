@@ -16,6 +16,9 @@
 *.iml
 *.ipr
 
+## ssl ###
+.pfx
+
 ### NetBeans ###
 /nbproject/private/
 /build/
