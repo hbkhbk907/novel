@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>小说列表</title>
+    <style type="text/css">
+        .list li{
+            padding: 0 10px;
+            width: 300px;
+            line-height: 36px;
+            border-bottom: 1px dashed #CCC;
+            font-size: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .title p{
+            text-align:center;
+            background: #C3DFEA;
+        }
+        .body{
+            background-color: #E9FAFF;
+        }
+    </style>
 </head>
-<body>
-    <ol>
+<body class="body">
+    <div class="title">
+        <p>小说列表</p>
+    </div>
+    <ol class="list">
         <li th:each="novel:${novels}">
             <a th:href="${novel.filePath}" th:utext="${novel.name}"></a>
         </li>

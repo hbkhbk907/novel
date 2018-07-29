@@ -3,9 +3,36 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title th:utext="${novelName}"></title>
+    <style type="text/css">
+        .list li{
+            float: left;
+            padding: 0 10px;
+            width: 300px;
+            line-height: 36px;
+            border-bottom: 1px dashed #CCC;
+            font-size: 14px;
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .title p{
+            text-align:center;
+            background: #C3DFEA;
+        }
+        .body{
+            background-color: #E9FAFF;
+        }
+    </style>
 </head>
-<body>
-    <ul>
+<body class="body">
+    <div class="return_index">
+        <a href="/">返回首页</a>
+    </div>
+    <div class="title">
+        <p th:utext="${novelName}+'章节列表'"></p>
+    </div>
+    <ul class="list">
         <li th:each="chapter:${chapters}">
             <a th:href="${chapter.chapterPath}" th:utext="${chapter.chapterName}"></a>
         </li>

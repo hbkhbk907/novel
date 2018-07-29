@@ -27,6 +27,10 @@ public class UrlFilter extends OncePerRequestFilter {
             filterChain.doFilter(request,response);
             return;
         }
+        if(url.equals("/") || url.equals("")){
+            response.sendRedirect("/index");
+            return;
+        }
         if(url.endsWith("/")){
             url = url.substring(0,url.length()-1);
         }

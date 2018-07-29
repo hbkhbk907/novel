@@ -53,6 +53,11 @@ function topCase(){
     }
 }
 
+function footer(){
+    document.getElementsByClassName("p")[0].getElementsByTagName("a")[0].innerHTML="首页";
+}
+
+document.writeln("<script src=\'/xxgg/jquery.min.js'></script>");
 document.writeln("<script src=\'/xxgg/book.js?v=1.0\'></script>");
 
 $(document).ready(function(){
