@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:utext="${novelName}"></title>
+</head>
+<body>
+    <ul>
+        <li th:each="chapter:${chapters}">
+            <a th:href="${chapter.chapterPath}" th:utext="${chapter.chapterName}"></a>
+        </li>
+    </ul>
+</body>
+</html>

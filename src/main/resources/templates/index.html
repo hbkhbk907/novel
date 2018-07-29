@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>小说列表</title>
+</head>
+<body>
+    <ol>
+        <li th:each="novel:${novels}">
+            <a th:href="${novel.filePath}" th:utext="${novel.name}"></a>
+        </li>
+    </ol>
+</body>
+</html>
