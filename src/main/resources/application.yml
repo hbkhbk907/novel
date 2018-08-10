@@ -1,5 +1,5 @@
 server:
-      prot: 8080
+      port: 443
       ssl:
           key-store-password: 1529894114104
           key-store-type: PKCS12
