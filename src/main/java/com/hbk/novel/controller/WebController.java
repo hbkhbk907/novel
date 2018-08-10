@@ -39,5 +39,10 @@ public class WebController {
         return "catalog.html";
     }
 
+    @RequestMapping(value = "/error",method=RequestMethod.GET)
+    public String error(){
+        return "error.html";
+    }
+
 
 }

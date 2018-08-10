@@ -9,13 +9,17 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @EnableJpaRepositories("com.hbk.novel.repository")   //dao类扫描路径
-@EntityScan("com.hbk.novel.entity")             //数据库映射entity扫描路径
+@EntityScan("com.hbk.novel.entity")
 public class NovelApplicationTests {
     @Autowired
     NovelChapterRepository novelChapterRepository;
@@ -26,11 +30,12 @@ public class NovelApplicationTests {
 
     @Test
     public void contextLoads() {
-        NovelChapter chapter = new NovelChapter();
-        chapter.setNovelId(1l);
-        chapter.setChapterName("1");
-        chapter.setChapterPath("2");
-        novelChapterRepository.save(chapter);
+//        NovelChapter chapter = new NovelChapter();
+//        chapter.setNovelId(-1l);
+//        chapter.setChapterName("1");
+//        chapter.setChapterPath("2");
+//        novelChapterRepository.save(chapter);
+        bean.main(null);
     }
 
 

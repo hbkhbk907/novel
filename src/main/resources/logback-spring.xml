@@ -44,13 +44,13 @@
             <!-- 日志归档 -->
             <fileNamePattern>${log.path}/novel-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>100KB</maxFileSize>
+                <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
             <!--日志文档保留天数-->
             <maxHistory>15</maxHistory>
         </rollingPolicy>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>error</level>
+            <level>info</level>
         </filter>
     </appender>
 

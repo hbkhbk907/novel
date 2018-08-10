@@ -18,6 +18,7 @@
 
 ## ssl ###
 .pfx
+.log
 
 ### NetBeans ###
 /nbproject/private/

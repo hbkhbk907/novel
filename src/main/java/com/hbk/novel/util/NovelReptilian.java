@@ -46,6 +46,11 @@ public class NovelReptilian {
         url.setBaseUrl("http://www.biqukan.com");
 
         new NovelReptilian().start(url);
+        try {
+            Thread.sleep(10000l);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -200,9 +205,14 @@ public class NovelReptilian {
         public String download(NovelUrl novelUrl,File file){
             String url = novelUrl.getUrl();
             String html = null;
+            InputStream inputStream = HttpsUtil.creatGetRequest(url);
+            //响应流获取失败
+            if(inputStream == null){
+                return html;
+            }
             try(
                     BufferedReader reader = new BufferedReader(new InputStreamReader(
-                            HttpsUtil.creatGetRequest(url),"GBK"));
+                            inputStream,"GBK"));
                     OutputStreamWriter osw = new OutputStreamWriter(new BufferedOutputStream(
                             new FileOutputStream(file)),"UTF-8");
             ){
@@ -211,7 +221,6 @@ public class NovelReptilian {
                 osw.write(html);
                 osw.flush();
             }catch(Exception e){
-                e.printStackTrace();
                 html = null;
                 if(file.exists()){
                     file.delete();
