@@ -1,0 +1,24 @@
+server:
+      port: 443
+      ssl:
+          key-store-password: 1529894114104
+          key-store-type: PKCS12
+          key-store: 1529894114104.pfx
+
+
+novel:
+  filePath: "F:"
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/novel?useSSL=false
+    username: root
+    password: 134679
+    initialsize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 10000
+  jpa:
+    show-sql: true
+    database: MYSQL

@@ -19,6 +19,7 @@
 ## ssl ###
 .pfx
 .log
+application-dev.yml
 
 ### NetBeans ###
 /nbproject/private/

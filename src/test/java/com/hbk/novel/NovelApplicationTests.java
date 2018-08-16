@@ -35,7 +35,7 @@ public class NovelApplicationTests {
 //        chapter.setChapterName("1");
 //        chapter.setChapterPath("2");
 //        novelChapterRepository.save(chapter);
-        bean.main(null);
+//        bean.main(null);
     }
 
 

@@ -39,19 +39,19 @@ public class NovelReptilian {
         new WorkThread().start();
     }
 
-    public static void main(String[] args) {
-        NovelUrl url = new NovelUrl();
-        url.setUrl("http://www.biqukan.com/1_1680/16813635.html");
-        url.setUri("/1_1680/16813635.html");
-        url.setBaseUrl("http://www.biqukan.com");
-
-        new NovelReptilian().start(url);
-        try {
-            Thread.sleep(10000l);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        NovelUrl url = new NovelUrl();
+//        url.setUrl("http://www.biqukan.com/1_1680/16813635.html");
+//        url.setUri("/1_1680/16813635.html");
+//        url.setBaseUrl("http://www.biqukan.com");
+//
+//        new NovelReptilian().start(url);
+//        try {
+//            Thread.sleep(10000l);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
     public class WorkThread extends Thread{
@@ -243,7 +243,7 @@ public class NovelReptilian {
                 chapter.setChapterPath(chapterPath);
                 novelChapterRepository.save(chapter);
             }catch (Exception e){
-                e.printStackTrace();
+//                e.printStackTrace();
             }
         }
 
