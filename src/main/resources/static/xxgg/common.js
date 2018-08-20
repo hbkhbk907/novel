@@ -55,6 +55,7 @@ function topCase(){
 
 function footer(){
     document.getElementsByClassName("p")[0].getElementsByTagName("a")[0].innerHTML="首页";
+    document.getElementsByClassName("logo")[0].getElementsByTagName("a")[0].innerHTML="https://www.hebaokang.top";
     var page = document.getElementsByClassName("page_chapter")[0];
     var title = document.getElementsByClassName("content")[0].getElementsByTagName("h1")[0];
     title.parentNode.insertBefore(page.cloneNode(true),title.nextSibling );
@@ -66,30 +67,32 @@ function footer(){
     page.getElementsByTagName("ul")[0].insertBefore(returnTop,page.getElementsByTagName("ul")[0].firstChild);
 
     //添加左右滑动翻页
-    var ele = document.getElementById("wrapper");
+    var ele = document.getElementById("content");
     var beginX, beginY, endX, endY, swipeLeft, swipeRight;
     ele.addEventListener('touchstart', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
+        // event.stopPropagation();
+        // event.preventDefault();
         beginX = event.targetTouches[0].screenX;
         beginY = event.targetTouches[0].screenY;
         swipeLeft = false, swipeRight = false;
     });
 
     ele.addEventListener('touchmove', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
         endX = event.targetTouches[0].screenX;
         endY = event.targetTouches[0].screenY;
         // 左右滑动
         if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
             /*向右滑动*/
             if (endX - beginX > 0) {
+                event.stopPropagation();
+                event.preventDefault();
                 swipeRight = true;
                 swipeLeft = false;
             }
             /*向左滑动*/
             else {
+                event.stopPropagation();
+                event.preventDefault();
                 swipeLeft = true;
                 swipeRight = false;
             }
@@ -100,17 +103,21 @@ function footer(){
         }
     });
     ele.addEventListener('touchend', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
+
 
         if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
             event.stopPropagation();
-            event.preventDefault();if (swipeRight) {
+            event.preventDefault();
+            if (swipeRight) {
+                event.stopPropagation();
+                event.preventDefault();
                 swipeRight = !swipeRight;
                 /*向右滑动*/
                 location.href=document.getElementsByClassName("page_chapter")[0].getElementsByTagName("a")[0].href;
             }
             if(swipeLeft) {
+                event.stopPropagation();
+                event.preventDefault();
                 swipeLeft = !swipeLeft;
                 /*向左滑动*/
                 location.href=document.getElementsByClassName("page_chapter")[0].getElementsByTagName("a")[2].href;
