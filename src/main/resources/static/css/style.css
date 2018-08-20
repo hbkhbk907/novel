@@ -150,8 +150,8 @@ h1{margin-bottom:20px;font-weight:400;font-size:24px;}
 .page b{float:left;margin-top:4px;padding:4px 12px;color:#888;}
 .page a:hover{border:1px solid #00A86E;color:#00A86E;}
 .page .active,.page .active:hover{background:#00A86E;color:#fff;border:1px solid #00A86E;}
-.page_chapter{width:600px;margin:20px auto;font-size:16px;overflow:hidden;}
-.page_chapter li{float:left;width:20%;line-height:36px;margin:0 2%;text-align:center;background:#fff;border:1px solid #ccc;border-radius: 6px;cursor:pointer;}
+.page_chapter{width:600px;margin:5px auto;font-size:16px;overflow:hidden;}
+.page_chapter li{float:left;width:20%;line-height:36px;margin:0 2%;text-align:center;background:#D3D3D3;border:1px solid #ccc;border-radius: 6px;cursor:pointer;}
 .page_chapter li a{display:block;color:#3487DD;}
 .page_chapter li a:hover{color:#CC2931;text-decoration:none;}
 .page_list{width:100%;overflow:hidden;}
