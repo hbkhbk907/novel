@@ -82,17 +82,15 @@ function footer(){
         endY = event.targetTouches[0].screenY;
         // 左右滑动
         if (Math.abs(endX - beginX) - Math.abs(endY - beginY) > 0) {
+            event.stopPropagation();
+            event.preventDefault();
             /*向右滑动*/
-            if (endX - beginX > 0) {
-                event.stopPropagation();
-                event.preventDefault();
+            if (endX - beginX > 200) {
                 swipeRight = true;
                 swipeLeft = false;
             }
             /*向左滑动*/
-            else {
-                event.stopPropagation();
-                event.preventDefault();
+            else if(beginX - endX > 200){
                 swipeLeft = true;
                 swipeRight = false;
             }

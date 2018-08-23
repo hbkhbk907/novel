@@ -17,7 +17,7 @@
 *.ipr
 
 ## ssl ###
-.pfx
+*.pfx
 .log
 application-dev.yml
 
@@ -28,3 +28,5 @@ application-dev.yml
 /dist/
 /nbdist/
 /.nb-gradle/
+/logs/
+src/main/resources/META-INF/
