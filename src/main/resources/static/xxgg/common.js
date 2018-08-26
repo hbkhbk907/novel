@@ -85,12 +85,12 @@ function footer(){
             event.stopPropagation();
             event.preventDefault();
             /*向右滑动*/
-            if (endX - beginX > 200) {
+            if (endX - beginX > 150) {
                 swipeRight = true;
                 swipeLeft = false;
             }
             /*向左滑动*/
-            else if(beginX - endX > 200){
+            else if(beginX - endX > 150){
                 swipeLeft = true;
                 swipeRight = false;
             }
