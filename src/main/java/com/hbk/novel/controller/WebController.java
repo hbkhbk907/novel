@@ -38,10 +38,20 @@ public class WebController {
         }
         List<NovelChapter> chapterList = novelService.queryChaptersByNovelId(id,Integer.parseInt(sortType));
         Novel novel = novelService.queryNovelByNovelId(id);
-        String url = request.getRequestURL() + "?id="+ id + "&sortType=2";
+        String sortUrl = null;
+        String sortName = null;
+        if("1".equals(sortType)){
+            sortUrl = request.getRequestURL() + "?id="+ id + "&sortType=2";
+            sortName = "倒序";
+        }else{
+            sortUrl = request.getRequestURL() + "?id="+ id + "&sortType=1";
+            sortName = "正序";
+        }
+
         model.addAttribute("novelName",novel.getName());
         model.addAttribute("chapters",chapterList);
-        model.addAttribute("descUrl",url);
+        model.addAttribute("sortName",sortName);
+        model.addAttribute("sortUrl",sortUrl);
         return "catalog.html";
     }
 

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title th:utext="${novelName}"></title>
     <style type="text/css">
-        .list li{
+        .chapter_list li{
             float: left;
             padding: 0 10px;
             width: 300px;
@@ -23,19 +23,30 @@
         .body{
             background-color: #E9FAFF;
         }
+        .bottom{
+            position:fixed;
+            bottom:0;
+            right:0;
+        }
     </style>
 </head>
 <body class="body">
     <div class="return_index">
-        <a href="/">返回首页</a> &nbsp;&nbsp;<a th:href="${descUrl}">倒序</a>
+        <a href="/">返回首页</a> &nbsp;&nbsp;<a th:href="${sortUrl}" th:utext="${sortName}"></a>
     </div>
     <div class="title">
         <p th:utext="${novelName}+'章节列表'"></p>
     </div>
-    <ul class="list">
-        <li th:each="chapter:${chapters}">
-            <a th:href="${chapter.chapterPath}" th:utext="${chapter.chapterName}"></a>
-        </li>
-    </ul>
+    <div class="list">
+        <ul class="chapter_list">
+            <li th:each="chapter:${chapters}">
+                <a th:href="${chapter.chapterPath}" th:utext="${chapter.chapterName}"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <br/>
+        <a href="#top">返回顶部</a>
+    </div>
 </body>
 </html>
