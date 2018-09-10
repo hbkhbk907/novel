@@ -16,5 +16,12 @@ public interface NovelChapterRepository extends JpaRepository<NovelChapter, Long
      */
     List<NovelChapter> findAllByNovelIdOrderById(Long novelId);
 
+    /**
+     * 通过小说编号查询对应章节(倒序)
+     * @param novelId
+     * @return
+     */
+    List<NovelChapter> findAllByNovelIdOrderByIdDesc(Long novelId);
+
 
 }

@@ -17,8 +17,9 @@ public class NovelServiceImpl implements NovelService {
     @Autowired
     NovelRepository novelRepository;
     @Override
-    public List<NovelChapter> queryChaptersByNovelId(Long novelId) {
-        return novelChapterRepository.findAllByNovelIdOrderById(novelId);
+    public List<NovelChapter> queryChaptersByNovelId(Long novelId, int sortType) {
+        return sortType == 1 ? novelChapterRepository.findAllByNovelIdOrderById(novelId)
+                : novelChapterRepository.findAllByNovelIdOrderByIdDesc(novelId);
     }
 
     @Override

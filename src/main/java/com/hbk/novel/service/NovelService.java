@@ -11,7 +11,7 @@ public interface NovelService {
      * @param novelId
      * @return
      */
-    List<NovelChapter> queryChaptersByNovelId(Long novelId);
+    List<NovelChapter> queryChaptersByNovelId(Long novelId, int sortType);
 
     /**
      * 通过小说编号查询小说信息

@@ -31,11 +31,17 @@ public class WebController {
     }
 
     @RequestMapping(value="/catalog",method = RequestMethod.GET)
-    public String novelCatalog(Model model,@RequestParam(name = "id",required = true) Long id){
-        List<NovelChapter> chapterList = novelService.queryChaptersByNovelId(id);
+    public String novelCatalog(Model model,@RequestParam(name = "id",required = true) Long id,
+                               @RequestParam(name = "sortType",defaultValue = "1") String sortType){
+        if (!sortType.matches("[12]")){
+            return "error.html";
+        }
+        List<NovelChapter> chapterList = novelService.queryChaptersByNovelId(id,Integer.parseInt(sortType));
         Novel novel = novelService.queryNovelByNovelId(id);
+        String url = request.getRequestURL() + "?id="+ id + "&sortType=2";
         model.addAttribute("novelName",novel.getName());
         model.addAttribute("chapters",chapterList);
+        model.addAttribute("descUrl",url);
         return "catalog.html";
     }
 
